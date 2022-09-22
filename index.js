@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const peopleModel = require("./models/people");
 const path = require("path");
+require('dotenv').config()
 
 const cors = require("cors");
 
@@ -10,7 +11,7 @@ app.use(express.json());
 const PORT = process.env.PORT || 8080;
 app.use(cors());
 
-mongoose.connect("mongodb+srv://clewis1337:Spacemad12!@cluster0.z089wpf.mongodb.net/the-array-of-everyone?retryWrites=true&w=majority");
+mongoose.connect(process.env.MONGODB_URL);
 
 app.get("/getPeople", (req, res) => {  //req: front end, res: back end
     peopleModel.find({}, (err, result) => { //get all data then run callback function
@@ -36,6 +37,12 @@ app.listen(3001, () => {
     console.log("Server running on 3001");
 });
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build'));
-   }
+// server static assets if in production
+if(process.env.NODE_ENV === 'production'){    
+    app.use(express.static('client/build'))  // set static folder 
+    //returning frontend for any route other than api 
+    app.get('*',(req,res)=>{     
+        res.sendFile (path.resolve(__dirname,'client','build',         
+                      'index.html' ));    
+    });
+}

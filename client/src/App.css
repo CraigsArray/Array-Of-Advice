@@ -1,0 +1,131 @@
+.array-bracket{
+  font-size: 270px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+  margin-left:10px;
+  margin-right:10px;
+  margin-top: auto;
+  margin-bottom: auto;
+  position: relative;
+  bottom: -10px;
+}
+.array-comma{
+  margin-top: auto;
+  margin-bottom: 5px;
+  font-size: 60px;
+  
+  
+}
+.people{
+  display: flex; 
+}
+.person{
+  align-self: flex-end;
+}
+.title{
+  font-size: 8ex;
+  position: sticky;
+  margin-left: auto;
+  text-align: center;
+
+}
+.scroll-box{
+  margin-top: 50px;
+  position: absolute !important;
+  height: 79% !important;
+}
+.person-advice{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  max-width: 330px;
+  min-width: 330px;
+  min-height: 220px;
+  padding: 10px;
+  margin-top: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 3px dashed #f8f8f2;
+  border-radius: 15%; 
+  display: grid;
+}
+.person-advice:hover{
+  background-color: #282c34;
+}
+.input-name, .input-statement, .input-submit{
+  font-family: 'Arial', Helvetica, sans-serif;
+  font-size: larger;
+  margin: 15px;
+  text-align: center;
+}
+.input-statement{
+  margin-top: 30px;
+}
+
+.person{
+  bottom: 15px;
+}
+
+body{
+  overflow-x: scroll;
+  background-color: #223545;
+  color: #f8f8f2;
+}
+
+
+
+
+.App {
+  text-align: center;
+
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .title{
+    font-size: 3em;
+    text-align: center;
+    margin-left: auto;
+    
+  }
+  .scroll-box{
+    margin-top: 0px;
+  }
+  .person-advice{
+    max-width: 20vw;
+  }
+  
+}
